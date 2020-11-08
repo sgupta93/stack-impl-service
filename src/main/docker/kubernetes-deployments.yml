@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: stack-impl-service
+  name: stack-impl-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: stack-impl-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: stack-impl-service
+    spec:
+      containers:
+      - image: stack-impl-service
+        name: stack-impl-service
+        resources: {}
+        ports:
+          - containerPort: 3000
+status: {}
